@@ -11,7 +11,10 @@ if not os.path.exists('temp'):
   os.makedirs('temp')
 
 directory = os.fsencode('in')
-notefiles = [f.decode('utf-8') for f in os.listdir(directory) if f.decode('utf-8').endswith('.note')]
+notefiles = []
+for f in os.listdir(directory):
+  if f.decode('utf-8').endswith('.note'):
+    notefiles.append(f.decode('utf-8'))
 
 for filename in notefiles:
   with zipfile.ZipFile(f'in/{filename}','r') as zip_ref:
@@ -24,7 +27,7 @@ for filename in notefiles:
 
     folder_name = next(os.walk(directory))[1][0]
     print(f'Extracted: {folder_name}')
-    pdf_folder_path = f'temp/{folder_name}/{folder_name}/PDFs'
+    pdf_folder_path = f'{directory}/{folder_name}/PDFs'
     try:
       pdfs = os.listdir(pdf_folder_path)
       if len(pdfs) > 1:
