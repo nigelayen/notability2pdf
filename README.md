@@ -1,8 +1,13 @@
 # notability2pdf
+Forked from steventango/notability2pdf. 
 
-Extract PDF files from notability (*.note). Note, the notability files must contain PDF files within them.
+This code will extract PDF files from within Notability .NOTE files. Python 3.x is required.
+Adapted for my use case only. I do not guarantee it will work in all scenarios.
 
-Usage:
-  - Place notability files in "in" directory
-  - Run "notability2pdf.py"
-  - PDF files are placed into "out" directory
+Basic usage:
+  1. Backup Notablity (e.g. Google Drive, Dropbox, etc.)
+  2. Create a folder on your local computer (e.g. notability2pdf)
+  3. Create a sub-folder named 'in'
+  4. Download the .NOTE files from the backup location and save to the 'in' folder.
+  5. Run "notability2pdf.py" from the folder created in step 2.
+  6. Extracted PDF files are saved "out" folder created by the code.
